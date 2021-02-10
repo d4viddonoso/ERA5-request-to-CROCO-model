@@ -107,11 +107,11 @@ for j in range(len_monthly_dates):
 
     # Ordinal date limits (days)
     n_start = datetime.date.toordinal(date_start)
-    n_end = datetime.date.toordinal(date_start)
+    n_end = datetime.date.toordinal(date_end)
 
     # Overlapping date string limits (yyyy-mm-dd)
     datestr_start_overlap = datetime.date.fromordinal(n_start - n_overlap).strftime('%Y-%m-%d')
-    datestr_end_overlap = datetime.date.fromordinal(n_start + n_overlap).strftime('%Y-%m-%d')
+    datestr_end_overlap = datetime.date.fromordinal(n_end + n_overlap).strftime('%Y-%m-%d')
 
     # Overlapping date string interval 
     vdate = datestr_start_overlap + '/' + datestr_end_overlap
