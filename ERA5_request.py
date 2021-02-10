@@ -38,9 +38,9 @@ n_overlap = 1
 time = '00/01/02/03/04/05/06/07/08/09/10/11/12/13/14/15/16/17/18/19/20/21/22/23'
 
 # Request area ([north, west, south, east])
-varea = [-30, -80, -40, -70]
+area = [-30, -80, -40, -70]
 
-# Request variables (see availables at ERA5_variables.json)
+# Request variables (see available at ERA5_variables.json)
 variables = ['meets','mntss','msnswrf','msnlwrf','msshf','mslhf','mer','mtpr', \
              'sst','t2m','d2m','q','msl','u10','v10']
 
@@ -132,7 +132,7 @@ for j in range(len_monthly_dates):
              'date': vdate,
              'variable': vlong,
              'levtype': vlevt,
-             'area': varea,
+             'area': area,
              'format': 'netcdf',
                   }
 
