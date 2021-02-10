@@ -1,22 +1,24 @@
 #!/usr/bin/env python
 
-# Script to perform ERA5 analysis request to variables
-#  needed to make the surface forcing/bulk files to run
-#  inter-annual CROCO simulations.
+# Script to download ECMWF ERA5 reanalysis datasets from the Climate Data
+#  Store (CDS) of Copernicus https://cds.climate.copernicus.eu
 #
-#  This file is (would like to be) part of CROCOTOOLS
+#  This script use the CDS Phyton API[*] to connect and download specific ERA5 
+#  variables, for a chosen area and monthly date interval, required by CROCO to 
+#  perform simulations with atmospheric forcing. Furthermore, this script use 
+#  ERA5 parameter names and not parameter IDs as these did not result in stable 
+#  downloads. 
 #
-#  This script has been tested using Python 3.8.6 and
-#  it need the modules: "cdsapi"[*], "datetime", 
-#  "calendar", "os" and "json".
+#  Tested using Python 3.8.6. This script need the following python libraries 
+#  pre-installed: "datetime", "calendar", "os" and "json".
 #
-#  [*] https://cds.climate.copernicus.eu/api/v2
+#  [*] https://cds.climate.copernicus.eu/api-how-to
 #
 #  Copyright (c) DDONOSO February 2021
 #  e-mail:ddonoso@dgeo.udec.cl  
 #
 
-#  You may see all available variables at the following website...
+#  You may see all available ERA5 variables at the following website
 #  https://confluence.ecmwf.int/display/CKB/ERA5%3A+data+documentation#ERA5:datadocumentation-Parameterlistings
 
 
@@ -25,9 +27,9 @@
 # *******************************************************************************
 # Dates limits
 year_start = 2020
-month_start = 10
+month_start = 11
 year_end = 2020
-month_end = 11
+month_end = 12
 
 # Overlapping days (at the beginning/end of each month)
 n_overlap = 1
@@ -61,7 +63,7 @@ import json
 main_dir = os.getcwd()
 
 # Output directory
-era5_dir = main_dir + '/ERA5_analysis'
+era5_dir = main_dir + '/ERA5'
 
 # Making output directory 
 os.makedirs(era5_dir,exist_ok=True)
@@ -69,7 +71,7 @@ os.makedirs(era5_dir,exist_ok=True)
 
 # -------------------------------------------------
 # Loading ERA5 variables's information as 
-# python Dictionarry from JSON file
+# python Dictionary from JSON file
 # -------------------------------------------------
 with open('era5_variables.json', 'r') as jf:
     era5 = json.load(jf)
