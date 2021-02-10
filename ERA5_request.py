@@ -40,20 +40,21 @@ time = '00/01/02/03/04/05/06/07/08/09/10/11/12/13/14/15/16/17/18/19/20/21/22/23'
 # Request area ([north, west, south, east])
 varea = [-30, -80, -40, -70]
 
-# Request variables
+# Request variables (see availables at ERA5_variables.json)
 variables = ['meets','mntss','msnswrf','msnlwrf','msshf','mslhf','mer','mtpr', \
              'sst','t2m','d2m','q','msl','u10','v10']
 
 
 # -------------------------------------------------
-# Getting libraries
+# Getting libraries and utilities
 # -------------------------------------------------
 import cdsapi
-from ERA5_utils import *
+from ERA5_utilities import *
 import datetime
 import calendar
 import os
 import json
+import cdsapi
 
 
 # -------------------------------------------------
@@ -73,7 +74,7 @@ os.makedirs(era5_dir,exist_ok=True)
 # Loading ERA5 variables's information as 
 # python Dictionary from JSON file
 # -------------------------------------------------
-with open('era5_variables.json', 'r') as jf:
+with open('ERA5_variables.json', 'r') as jf:
     era5 = json.load(jf)
 
 
