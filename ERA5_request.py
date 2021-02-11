@@ -158,7 +158,7 @@ for j in range(len_monthly_dates):
 
         # Information strings
         info_time_clock = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        info_mdate = datetime.date(year,month,1).strftime('%Y-%b')
+        info_monthly_date = datetime.date(year,month,1).strftime('%Y-%b')
         info_n_overlap = ' with ' + str(n_overlap) + ' overlapping day(s) '
 
         # Printing message on screen
@@ -166,7 +166,7 @@ for j in range(len_monthly_dates):
         print('-----------------------------------------------------------')
         print('',info_time_clock,'                                        ')
         print(' Performing ERA5 data request, please wait...              ')
-        print(' Date [yyyy-mmm] =',info_mdate + info_n_overlap             )
+        print(' Date [yyyy-mmm] =',info_monthly_date + info_n_overlap,'   ')
         print(' Variable =',vlong,'                                       ')
         print('-----------------------------------------------------------')
 
