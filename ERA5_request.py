@@ -9,8 +9,8 @@
 #  ERA5 parameter names and not parameter IDs as these did not result in stable 
 #  downloads. 
 #
-#  Tested using Python 3.8.6. This script need the following python libraries 
-#  pre-installed: "datetime", "calendar", "os" and "json".
+#  Tested using Python 3.8.6 and Python 3.9.1. This script need the following
+#  python libraries pre-installed: "datetime", "calendar", "os" and "json".
 #
 #  [*] https://cds.climate.copernicus.eu/api-how-to
 #
@@ -54,7 +54,6 @@ import datetime
 import calendar
 import os
 import json
-import cdsapi
 
 
 # -------------------------------------------------
