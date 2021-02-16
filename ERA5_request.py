@@ -27,9 +27,9 @@
 # *******************************************************************************
 # Dates limits
 year_start = 2020
-month_start = 11
+month_start = 10
 year_end = 2020
-month_end = 12
+month_end = 11
 
 # Overlapping days (at the beginning/end of each month)
 n_overlap = 1
@@ -137,7 +137,7 @@ for j in range(len_monthly_dates):
 
         # Add options to Variable without "diurnal variations"
         if vlong == 'sea_surface_temperature':
-           options['time'] = '12'
+           options['time'] = '00'
    
         else:
            options['time'] = time
@@ -157,7 +157,7 @@ for j in range(len_monthly_dates):
 
         # Information strings
         info_time_clock = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        info_monthly_date = datetime.date(year,month,1).strftime('%Y-%b')
+        info_monthly_date = monthly_date.strftime('%Y-%b')
         info_n_overlap = ' with ' + str(n_overlap) + ' overlapping day(s) '
 
         # Printing message on screen

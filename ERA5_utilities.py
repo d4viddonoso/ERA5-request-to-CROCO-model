@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Defined utils to script ERA_request.py
+# Defined utilities to script ERA_request.py 
 #
 #  Copyright (c) DDONOSO February 2021
 #  e-mail:ddonoso@dgeo.udec.cl  
