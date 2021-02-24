@@ -10,7 +10,7 @@
 #  downloads. 
 #
 #  Tested using Python 3.8.6 and Python 3.9.1. This script need the following
-#  python libraries pre-installed: "datetime", "calendar", "os" and "json".
+#  python libraries pre-installed: "calendar", "datetime", "json" and "os".
 #
 #  [*] https://cds.climate.copernicus.eu/api-how-to
 #
@@ -48,8 +48,8 @@ variables = ['meets','mntss','msnswrf','msnlwrf','msshf','mslhf','mer','mtpr', \
 # -------------------------------------------------
 # Getting libraries and utilities
 # -------------------------------------------------
-from ERA5_utilities import *
 import cdsapi
+from ERA5_utilities import *
 import calendar
 import datetime
 import json
