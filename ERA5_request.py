@@ -48,12 +48,12 @@ variables = ['meets','mntss','msnswrf','msnlwrf','msshf','mslhf','mer','mtpr', \
 # -------------------------------------------------
 # Getting libraries and utilities
 # -------------------------------------------------
-import cdsapi
 from ERA5_utilities import *
-import datetime
+import cdsapi
 import calendar
-import os
+import datetime
 import json
+import os
 
 
 # -------------------------------------------------
@@ -152,7 +152,7 @@ for j in range(len_monthly_dates):
            product = 'reanalysis-era5-single-levels'
 
         # Output filename
-        fname = 'ERA5_ecmwf_' + vname.upper() + '_Y' + str(year) + 'M' +  str(month).zfill(2) +'.nc'
+        fname = 'ERA5_ecmwf_' + vname.upper() + '_Y' + str(year) + 'M' + str(month).zfill(2) + '.nc'
         output = era5_dir + '/' + fname
 
         # Information strings
